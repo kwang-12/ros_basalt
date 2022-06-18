@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ros_basalt</name>
+  <version>1.0.0</version>
+  <description>ROS noetic wrapper for Basalt VIO</description>
+  <maintainer email="shuibianwang@gmail.com">Kezhuo Wang</maintainer>
+  <license>MIT</license>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>eigen</depend>
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <export>
+  </export>
+</package>

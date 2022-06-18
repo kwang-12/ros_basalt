@@ -1,0 +1,3 @@
+<launch>
+    <node name="rs_t265_vio_node" pkg="ros_basalt" type="ros_basalt_rs_t265_vio" output="screen" />
+</launch>
