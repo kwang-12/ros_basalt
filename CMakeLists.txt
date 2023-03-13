@@ -21,34 +21,39 @@ find_package(realsense2 REQUIRED)
 find_package(TBB REQUIRED)
 find_package(OpenCV REQUIRED)
 
-catkin_package()
-
 include_directories(
+include
 ${catkin_INCLUDE_DIRS}
 ${realsense2_INCLUDE_DIR}
 ${EIGEN3_INCLUDE_DIR}
 )
 
+catkin_package(
+INCLUDE_DIRS include
+LIBRARIES ${PROJECT_NAME}
+CATKIN_DEPENDS roscpp
+)
+
 add_library(${PROJECT_NAME}
-src/device/rs_t265.cpp
-src/linearization/landmark_block.cpp
-src/linearization/linearization_base.cpp
-src/linearization/linearization_abs_qr.cpp
-src/linearization/linearization_abs_sc.cpp
-src/linearization/linearization_rel_sc.cpp
-src/optical_flow/optical_flow.cpp
-src/utils/time_utils.cpp
-src/utils/system_utils.cpp
-src/utils/keypoints.cpp
-src/utils/vio_config.cpp
-src/vi_estimator/ba_base.cpp
-src/vi_estimator/sc_ba_base.cpp
-src/vi_estimator/sqrt_ba_base.cpp
-src/vi_estimator/landmark_database.cpp
-src/vi_estimator/marg_helper.cpp
-src/vi_estimator/vio_estimator.cpp
-src/vi_estimator/sqrt_keypoint_vo.cpp
-src/vi_estimator/sqrt_keypoint_vio.cpp
+src/ros_basalt/device/rs_t265.cpp
+src/ros_basalt/linearization/landmark_block.cpp
+src/ros_basalt/linearization/linearization_base.cpp
+src/ros_basalt/linearization/linearization_abs_qr.cpp
+src/ros_basalt/linearization/linearization_abs_sc.cpp
+src/ros_basalt/linearization/linearization_rel_sc.cpp
+src/ros_basalt/optical_flow/optical_flow.cpp
+src/ros_basalt/utils/time_utils.cpp
+src/ros_basalt/utils/system_utils.cpp
+src/ros_basalt/utils/keypoints.cpp
+src/ros_basalt/utils/vio_config.cpp
+src/ros_basalt/vi_estimator/ba_base.cpp
+src/ros_basalt/vi_estimator/sc_ba_base.cpp
+src/ros_basalt/vi_estimator/sqrt_ba_base.cpp
+src/ros_basalt/vi_estimator/landmark_database.cpp
+src/ros_basalt/vi_estimator/marg_helper.cpp
+src/ros_basalt/vi_estimator/vio_estimator.cpp
+src/ros_basalt/vi_estimator/sqrt_keypoint_vo.cpp
+src/ros_basalt/vi_estimator/sqrt_keypoint_vio.cpp
 )
 target_link_libraries(${PROJECT_NAME}
 ${catkin_LIBRARIES}

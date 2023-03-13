@@ -4,8 +4,8 @@
 
 #include <tbb/global_control.h>
 
-#include "../include/device/rs_t265.h"
-#include "../include/vi_estimator/vio_estimator.h"
+#include <ros_basalt/device/rs_t265.h>
+#include <ros_basalt/vi_estimator/vio_estimator.h>
 
 basalt::Calibration<double> calib;
 basalt::VioConfig vio_config;
